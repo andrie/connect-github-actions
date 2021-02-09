@@ -14,6 +14,8 @@ jobs:
     
       - name: Deploy geyser app
         uses: rstudio/actions/connect-publish@main
+        env:
+          CONNECT_ENV_SET_FOO: foobarbaz
         with:
           url: https://${{ secrets.CONNECT_API_KEY }}@colorado.rstudio.com/rsc
           access-type: logged_in
