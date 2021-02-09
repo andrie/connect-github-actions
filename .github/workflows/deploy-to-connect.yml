@@ -1,0 +1,10 @@
+steps:
+  - uses: actions/checkout@v2
+
+  - name: Deploy geyser app
+    uses: rstudio/actions/connect-publish@main
+    with:
+      url: https://${{ secrets.RSTUDIO_CONNECT_API_KEY }}@colorado.rstudio.com/rsc
+      access-type: logged_in
+      dir: |
+        ./geyser/
